@@ -238,9 +238,6 @@ function! s:GitBranchInfoFindDir()
 	let b:gbi_git_dir = ""
 	let l:bufname = getcwd()
 	let l:path = finddir(".git",l:bufname.";")
-	if has("win32") || has("win32unix")
-		let l:path = substitute(l:path, "\\", "/", "g")
-	endif
 	if isdirectory(l:path)
 		let b:gbi_git_dir = l:path
 	endif
